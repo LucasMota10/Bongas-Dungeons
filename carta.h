@@ -10,9 +10,10 @@ int tipodacarta, power = 0, mana = 0,regmana = 0,vida = 0,escudo = 0;
 
 //tipo de carta por num (0==ataque , 1==defesa , especial == 2)
 
-void criar_cartas(){
+cards cartas[24];
 
-cards cartas[11];
+void criar_cartas(cards cartas[24]){
+
 
 //cartas de ataque
 
@@ -81,5 +82,22 @@ cartas[11].power = 10;
 cartas[11].mana = 10;
 cartas[11].vida = 10;
 cartas[11].escudo = 10;
+
+cartas[12] = cartas[0];
+cartas[13] = cartas[1];
+cartas[14] = cartas[2];
+cartas[15] = cartas[3];
+cartas[16] = cartas[4];
+cartas[17] = cartas[5];
+cartas[18] = cartas[6];
+cartas[19] = cartas[7];
+cartas[20] = cartas[8];
+cartas[21] = cartas[9];
+cartas[22] = cartas[10];
+cartas[23] = cartas[11];
+}
+
+int main(){
+    printf("%s",cartas[12].nome);
 }
 #endif

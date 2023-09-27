@@ -15,7 +15,7 @@ typedef struct
 typedef struct {
     int dano;
     int escudo;
-}deck_monstro;
+}deck_monstro; // CRIAR AS ACOES DOS MONSTROS
 
 
 void criar_monstro(){
