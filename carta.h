@@ -2,18 +2,16 @@
 #define carta_h
 #include <stdio.h>
 #include <string.h>
-
-typedef struct{
-char nome[30];
-int tipodacarta, power = 0, mana = 0,regmana = 0,vida = 0,escudo = 0;
-}cards;
+#include <time.h>
+#include <stdlib.h>
+#include "pilha.h"
 
 //tipo de carta por num (0==ataque , 1==defesa , especial == 2)
 
-cards cartas[24];
+//cartas do deck
+void criar_cartas(tp_pilha *pilha){
 
-void criar_cartas(cards cartas[24]){
-
+tp_cartas cartas[12];
 
 //cartas de ataque
 
@@ -83,21 +81,22 @@ cartas[11].mana = 10;
 cartas[11].vida = 10;
 cartas[11].escudo = 10;
 
-cartas[12] = cartas[0];
-cartas[13] = cartas[1];
-cartas[14] = cartas[2];
-cartas[15] = cartas[3];
-cartas[16] = cartas[4];
-cartas[17] = cartas[5];
-cartas[18] = cartas[6];
-cartas[19] = cartas[7];
-cartas[20] = cartas[8];
-cartas[21] = cartas[9];
-cartas[22] = cartas[10];
-cartas[23] = cartas[11];
+//Atribuindo os niveis das cartas
+int lvl = 1;
+for(int i = 0 ; i<12 ; i++){
+    cartas[i].level = lvl;
+    lvl++;
+    if(lvl>4) lvl = 1;
 }
 
-int main(){
-    printf("%s",cartas[12].nome);
+//Função preencher pilha:
+srand(time(NULL));
+for (int i = 0; i < 12; i++) {    // shuffle array
+    
+    int random = rand()%11;
+    push(pilha, cartas[random]);
+
 }
+}
+
 #endif
