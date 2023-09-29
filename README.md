@@ -1,12 +1,13 @@
-# Jogo-de-AED 💻​
-Jogo de cartas com elementos de roguelike 
+# Bongas Dungeons 💻​
 
-Desenvolvido por:
+ 🔴 Jogo de cartas com elementos do estilo roguelike 📊 
 
-- Lucas Mota
-- Henrique Barros
-- Daniel Vasconcelhos
-- Andre Rezende
-- Gulherme Rios
+ 🔴 Desenvolvido por: 🧑‍💻
 
-Esse projeto foi passado pelo professor Marcio Soussa na disciplina de Algoritmos e Estrutura de dados. No jogo, utilizamos as estruturas de dados apresentadas em sala de aula (Fila e Pilha) para o desenvolvimento do codigo.
+  - Lucas Mota 
+  - Henrique Barros
+  - Daniel Vasconcelhos
+  - Andre Rezende
+  - Gulherme Rios
+
+ 🔴 Esse projeto foi passado pelo professor Marcio Soussa na disciplina de Algoritmos e Estrutura de dados. No jogo, utilizamos      as estruturas de dados apresentadas em sala de aula (Fila e Pilha) para o desenvolvimento do codigo.
