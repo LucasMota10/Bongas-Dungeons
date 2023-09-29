@@ -1,4 +1,4 @@
-# Jogo-de-AED
+# Jogo-de-AED 💻​
 Jogo de cartas com elementos de roguelike 
 
 Desenvolvido por:
