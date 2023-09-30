@@ -4,14 +4,13 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-
 #define MAX 100
 
 typedef struct {
   char nome[30];
   int tipodacarta; // tipo de carta por num (0==ataque , 1==defesa , especial ==
                    // 2)
-  int power, mana, regmana, vida, escudo, level;
+  int power, mana, regmana, vida, escudo;
 } tp_cartas;
 
 // LIB DE PILHA
@@ -133,20 +132,9 @@ void criar_cartas(tp_pilha *pilha) {
   cartas[11].vida = 10;
   cartas[11].escudo = 10;
 
-  // Atribuindo os niveis das cartas
-  int lvl = 1;
-  int i;
-  for (i = 0; i < 12; i++) {
-    cartas[i].level = lvl;
-    lvl++;
-    if (lvl > 4)
-      lvl = 1;
-  }
-
   // Função preencher pilha:
   srand(time(NULL));
-  for (i = 0; i < 10; i++) { // shuffle array
-
+  for (int i = 0; i < 10; i++) { // shuffle array
     int random = rand() % 11;
     push(pilha, cartas[random]);
   }

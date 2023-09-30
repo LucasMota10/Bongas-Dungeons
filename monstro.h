@@ -154,9 +154,9 @@ void criarmonstro(tp_monstro *monstro, tp_level *level){
     char nomes[4][30];
 
     strcpy(nomes[0], "Careca da Havan");
-    strcpy(nomes[1], "Sagnob");
+    strcpy(nomes[1], "Elon Musk");
     strcpy(nomes[2], "Aluno do SESI");
-    strcpy(nomes[3], "Azulzinho");
+    strcpy(nomes[3], "Rogério Ceni");
   
     monstro->vida = 200;
     monstro->escudo = 0;
