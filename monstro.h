@@ -1,5 +1,5 @@
-#ifndef monstro_h
-#define monstro_h
+#ifndef MONSTRO_H
+#define MONSTRO_H
 
 #include "caminho.h"
 #include <stdio.h>
@@ -101,7 +101,7 @@ int verificarvida(tp_monstro monstro){
 int criar_acoes_monstro(tp_fila *fila){
 
     acoes_monstro acoes[MAXF];
-
+    
     // Ataque
     acoes[0].tipo = 0;
     acoes[0].valor = 27;
@@ -154,9 +154,9 @@ void criarmonstro(tp_monstro *monstro, tp_level *level){
     char nomes[4][30];
 
     strcpy(nomes[0], "Careca da Havan");
-    strcpy(nomes[1], "Elon Musk");
+    strcpy(nomes[1], "Sagnob");
     strcpy(nomes[2], "Aluno do SESI");
-    strcpy(nomes[3], "Rogério Ceni");
+    strcpy(nomes[3], "Picos e Vales");
   
     monstro->vida = 200;
     monstro->escudo = 0;
@@ -195,7 +195,7 @@ void printar_monstro(tp_monstro monstro, tp_fila *fila){
         printf("Próximo movimento: Defesa\n\n");
         break;
     case 2:
-        printf("Próximo movimento: Especial\n\n");
+        printf("Próximo movimento: Cura\n\n");
         break;
     default:
         break;

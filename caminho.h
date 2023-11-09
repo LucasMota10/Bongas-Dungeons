@@ -1,5 +1,5 @@
-#ifndef caminho_h
-#define caminho_h
+#ifndef CAMINHO_H
+#define CAMINHO_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -66,7 +66,5 @@ int level_atual(tp_level *level){
   }
   return level_item;
 }
-
-
 
 #endif

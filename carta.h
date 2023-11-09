@@ -1,17 +1,20 @@
-#ifndef carta_h
-#define carta_h
+#ifndef CARTA_H
+#define CARTA_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+
+
 #define MAX 100
 
 typedef struct {
   char nome[30];
-  int tipodacarta; // tipo de carta por num (0==ataque , 1==defesa , especial ==
+  int tipodacarta; // tipo de carta por num (0==ataque , 1==defesa, especial ==
                    // 2)
-  int power, mana, regmana, vida, escudo;
+  int power, mana, level;
 } tp_cartas;
+
 
 // LIB DE PILHA
 
@@ -58,79 +61,49 @@ int top(tp_pilha *p, tp_cartas *e) {
 
 int altura_pilha(tp_pilha *p) { return p->topo + 1; }
 
-// cartas do deck
 
-void criar_cartas(tp_pilha *pilha) {
+// cartas do deck
+void imprime_pilha(tp_pilha p){
+    tp_cartas e;
+    printf("\n");
+    while (!pilha_vazia(&p)){
+        pop(&p, &e);
+        printf("Carta: %s\n", e.nome);
+    }
+}
+int criar_cartas(tp_pilha *pilha){
 
   tp_cartas cartas[12];
 
-  // cartas de ataque
 
-  strcpy(cartas[0].nome, "Bola de Fogo");
-  cartas[0].tipodacarta = 0;
-  cartas[0].power = 10;
-  cartas[0].mana = 20;
+  //manipulação do arquivo txt
+  FILE *carta_nome, *carta_specs; //dois arquivos, um para ler os nomes e outro para as habilidades
+  char name[50];
+  char *token;
 
-  strcpy(cartas[1].nome, "Soco");
-  cartas[1].tipodacarta = 0;
-  cartas[1].power = 5;
-  cartas[1].mana = 5;
+  int tipo, poder, level, mana;
 
-  strcpy(cartas[2].nome, "Flecha da tormenta");
-  cartas[2].tipodacarta = 0;
-  cartas[2].power = 15;
-  cartas[2].mana = 10;
+  carta_nome= fopen("nome.txt", "r");
+  carta_specs = fopen("habilidades.txt", "r");
 
-  strcpy(cartas[3].nome, "Sistemas Digitais");
-  cartas[3].tipodacarta = 0;
-  cartas[3].power = 25;
-  cartas[3].mana = 30;
+  if(!carta_nome || !carta_specs)printf("erro ao abrir");
+  
+  int i = 0;
 
-  // cartas de defesa
+  while(fgets(name, sizeof(name), carta_nome)){
+    strcpy(cartas[i].nome, name);
+    i++;
+  }
 
-  strcpy(cartas[4].nome, "Camisa Laranja");
-  cartas[4].tipodacarta = 1;
-  cartas[4].mana = 10;
-  cartas[4].escudo = 20;
-
-  strcpy(cartas[5].nome, "Lando Lando");
-  cartas[5].tipodacarta = 1;
-  cartas[5].mana = 15;
-  cartas[5].escudo = 30;
-
-  strcpy(cartas[6].nome, "Obrigado Soussa");
-  cartas[6].tipodacarta = 1;
-  cartas[5].mana = 5;
-  cartas[5].escudo = 20;
-
-  strcpy(cartas[7].nome, "Pato");
-  cartas[7].tipodacarta = 1;
-  cartas[7].mana = 50;
-  cartas[7].escudo = 30;
-
-  // cartas de especial
-
-  strcpy(cartas[8].nome, "Lanche no garfo de ouro");
-  cartas[8].tipodacarta = 2;
-  cartas[8].vida = 20;
-  cartas[8].mana = 10;
-
-  strcpy(cartas[9].nome, "Neneca no cyber");
-  cartas[9].tipodacarta = 2;
-  cartas[9].vida = 50;
-  cartas[9].mana = 30;
-
-  strcpy(cartas[10].nome, "Masterizou AED");
-  cartas[10].tipodacarta = 2;
-  cartas[10].mana = 0;
-  cartas[10].regmana = 60;
-
-  strcpy(cartas[11].nome, "Sabedoria suprema");
-  cartas[11].tipodacarta = 2;
-  cartas[11].power = 10;
-  cartas[11].mana = 10;
-  cartas[11].vida = 10;
-  cartas[11].escudo = 10;
+  i=0;
+  while(fscanf(carta_specs, "%d %d %d %d", &tipo, &poder, &level, &mana) != EOF){
+    //atribuir valores as cartas
+    cartas[i].tipodacarta = tipo;
+    cartas[i].level = level;
+    cartas[i].mana = mana;
+    cartas[i].power = poder;
+    i++;
+  }
 
   // Função preencher pilha:
   srand(time(NULL));
@@ -138,18 +111,10 @@ void criar_cartas(tp_pilha *pilha) {
     int random = rand() % 11;
     push(pilha, cartas[random]);
   }
-}
 
-void imprime_cartas(tp_cartas *p) {
+  //FECHAR OS ARQUIVOS
+  fclose(carta_nome); fclose(carta_specs);
 
-  printf("============================================\n");
-  printf("Cartas do jogador: \n");
-
-  for (int i = 0; i < 5; i++) {
-
-    printf("%d.: %s\n", i + 1, p[i].nome);
-  }
-  printf("============================================\n\n");
 }
 
 #endif
