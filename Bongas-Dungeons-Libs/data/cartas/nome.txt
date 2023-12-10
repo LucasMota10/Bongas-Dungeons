@@ -1,0 +1,12 @@
+Bola de Fogo // 20 de Dano, 20 de Mana
+Soco // 10 de Dano, 5 de Mana
+Flecha da Tormenta // 30 de Dano, 10 de Mana
+Sistemas Digitais // 50 de Dano, 30 de Mana
+Camisa Laranja // 20 de Escudo, 10 de Mana
+Lando Lando // 30 de Escudo, 15 de Mana
+Obrigado Soussa // 20 de Escudo, 5 de Mana
+Pato // 30 de Escudo, 50 de Mana
+Lanche no garfo de Ouro // 20 de Vida, 10 de Mana
+Neneca no Cyber // 50 de Vida, 30 de Mana
+Masterizou AED // 40 de Vida, 20 de Mana
+Sabedoria Suprema // 60 de Vida, 10 de Mana
