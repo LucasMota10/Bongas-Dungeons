@@ -1,0 +1,4 @@
+Carta usada: Sistemas Digitais // 50 de Dano, 30 de Mana
+ Nivel: 1
+Carta usada: Flecha da Tormenta // 30 de Dano, 10 de Mana
+ Nivel: 1
