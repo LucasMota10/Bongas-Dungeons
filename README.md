@@ -13,3 +13,11 @@
   - 𝘿𝙖𝙣𝙞𝙚𝙡 𝙑𝙖𝙨𝙘𝙤𝙣𝙘𝙚𝙡𝙤𝙨
   - 𝘼𝙣𝙙𝙧𝙚 𝙍𝙚𝙯𝙚𝙣𝙙𝙚
   - 𝙂𝙪𝙡𝙝𝙚𝙧𝙢𝙚 𝙍𝙞𝙤𝙨
+
+# Execução:
+
+Para executar o jogo é necessario seguir as seguintes etapas:
+
+1. Baixar o zip
+2. Extrair o arquivo
+3. Executar o arquivo "main.exe"
